@@ -1,0 +1,40 @@
+stages:
+  - compile
+  - build
+
+compile-job:
+  stage: compile
+  image:
+    name: quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-21
+    entrypoint:
+      - ""
+  script:
+    - ./mvnw package -Dnative
+  artifacts:
+    name: artifacts-build-native
+    expire_in: 1 hours
+    paths:
+      - $CI_PROJECT_DIR/target/
+
+build-job:
+  stage: build
+  needs:
+    - compile-job
+  image: docker:stable
+  variables:
+    DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    VERSION: "1.0"
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - ls
+    - docker build -t $DOCKER_IMAGE_NAME -f src/main/docker/Dockerfile.native .
+    - docker push $DOCKER_IMAGE_NAME
+    - |
+    - if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+    - docker tag "$DOCKER_IMAGE_NAME" "$CI_REGISTRY_IMAGE:$VERSION"
+    - docker push "$CI_REGISTRY_IMAGE:$VERSION"
+    - fi
+

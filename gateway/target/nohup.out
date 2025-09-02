@@ -1,0 +1,131 @@
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2025-06-05 09:45:51,423 INFO  [io.quarkus] (main) trust-gateway 1.0.0-SNAPSHOT native (powered by Quarkus 3.21.1) started in 0.048s. Listening on: http://0.0.0.0:8080
+2025-06-05 09:45:51,423 INFO  [io.quarkus] (main) Profile prod activated. 
+2025-06-05 09:45:51,423 INFO  [io.quarkus] (main) Installed features: [cdi, mongodb-client, mongodb-panache, narayana-jta, rest, rest-client, rest-client-jackson, rest-jackson, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
+pfx3447117319791248696sfx
+mv /tmp/uploads/pfx3447117319791248696sfx /home/ubuntu/gateway-quarkus/gateway/data/updates.csv
+2025-06-05 10:08:51,452 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) File updates.csv moved!
+docker ps -a --filter "name=gateway-quarkus-osrm-extract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-extract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-extract-1
+2025-06-05 10:08:51,743 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) OSRM Extract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-partition-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-partition-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-partition-1
+2025-06-05 10:08:52,072 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) OSRM Partition Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-customize-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-customize-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-customize-1
+2025-06-05 10:08:52,353 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) OSRM Customize Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-contract-1" --format "{{.Names}}"
+2025-06-05 10:08:52,648 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) OSRM Contract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-backend-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-backend-1
+2025-06-05 10:08:53,137 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-1) OSRM Restart Done!
+pfx10260236560876175669sfx
+mv /tmp/uploads/pfx10260236560876175669sfx /home/ubuntu/gateway-quarkus/gateway/data/updates.csv
+2025-06-05 10:16:41,425 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) File updates.csv moved!
+docker ps -a --filter "name=gateway-quarkus-osrm-extract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-extract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-extract-1
+2025-06-05 10:16:41,693 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) OSRM Extract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-partition-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-partition-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-partition-1
+2025-06-05 10:16:42,003 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) OSRM Partition Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-customize-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-customize-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-customize-1
+2025-06-05 10:16:42,429 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) OSRM Customize Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-contract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-contract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-contract-1
+2025-06-05 10:16:42,724 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) OSRM Contract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-backend-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-backend-1
+2025-06-05 10:16:43,180 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-2) OSRM Restart Done!
+pfx4087494320697636343sfx
+mv /tmp/uploads/pfx4087494320697636343sfx /home/ubuntu/gateway-quarkus/gateway/data/updates.csv
+2025-06-05 10:25:23,646 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) File updates.csv moved!
+docker ps -a --filter "name=gateway-quarkus-osrm-extract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-extract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-extract-1
+2025-06-05 10:25:23,999 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) OSRM Extract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-partition-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-partition-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-partition-1
+2025-06-05 10:25:24,362 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) OSRM Partition Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-customize-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-customize-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-customize-1
+2025-06-05 10:25:24,734 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) OSRM Customize Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-contract-1" --format "{{.Names}}"
+2025-06-05 10:25:25,062 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) OSRM Contract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-backend-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-backend-1
+2025-06-05 10:25:25,684 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-3) OSRM Restart Done!
+pfx10694000679936453782sfx
+mv /tmp/uploads/pfx10694000679936453782sfx /home/ubuntu/gateway-quarkus/gateway/data/updates.csv
+2025-06-05 10:26:48,522 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) File updates.csv moved!
+docker ps -a --filter "name=gateway-quarkus-osrm-extract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-extract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-extract-1
+2025-06-05 10:26:48,765 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) OSRM Extract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-partition-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-partition-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-partition-1
+2025-06-05 10:26:49,107 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) OSRM Partition Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-customize-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-customize-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-customize-1
+2025-06-05 10:26:49,424 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) OSRM Customize Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-contract-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-contract-1
+REMOVED WITH COMMAND: docker rm -f gateway-quarkus-osrm-contract-1
+2025-06-05 10:26:49,713 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) OSRM Contract Done!
+docker ps -a --filter "name=gateway-quarkus-osrm-backend-1" --format "{{.Names}}"
+Container Output: gateway-quarkus-osrm-backend-1
+2025-06-05 10:26:50,125 INFO  [uni.tru.ser.osr.OsrmContainerManager] (executor-thread-4) OSRM Restart Done!
+2025-06-07 06:43:23,387 WARN  [io.net.cha.DefaultChannelPipeline] (vert.x-eventloop-thread-11) An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.: java.net.SocketException: Connection reset
+	at java.base@21.0.7/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base@21.0.7/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.core.thread.PlatformThreads.threadStartRoutine(PlatformThreads.java:896)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.core.thread.PlatformThreads.threadStartRoutine(PlatformThreads.java:872)
+
+2025-08-20 16:05:54,884 ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-5) HTTP Request to /trust/api/v1/planner/plans?problem= failed, error id: 059289c5-77b8-4b20-b272-77987cfbd096-1: java.lang.NullPointerException
+	at java.base@21.0.7/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
+	at java.base@21.0.7/java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964)
+	at unisannio.trust.services.GatewayService.getPlan(GatewayService.java:74)
+	at unisannio.trust.controller.GatewayController$quarkusrestinvoker$getPlan_b7f8ee752ebeaefb19c4cdbd6ce3d5876fa8d46c.invoke(Unknown Source)
+	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:638)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
+	at java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.core.thread.PlatformThreads.threadStartRoutine(PlatformThreads.java:896)
+	at org.graalvm.nativeimage.builder/com.oracle.svm.core.thread.PlatformThreads.threadStartRoutine(PlatformThreads.java:872)
+

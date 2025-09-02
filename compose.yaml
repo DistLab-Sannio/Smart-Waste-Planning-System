@@ -1,0 +1,68 @@
+services:
+  mongo:
+    image: "mongo:8.0.6"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: PLACEHOLDER
+      MONGO_INITDB_ROOT_PASSWORD: PLACEHOLDER
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-volume:/data/db
+      - ./gateway/mongo-init/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - ./gateway/mongo-init/mongo-init.js:/initdb/mongo-init.js:ro
+      - ./gateway/mongo-init/segments.json:/initdb/segments.json:ro
+  vroom:
+    network_mode: host
+    image: ghcr.io/vroom-project/vroom-docker:v1.14.0
+    container_name: vroom
+    volumes:
+      - ./vroom-backend/conf:/conf
+    environment:
+      - VROOM_ROUTER=osrm  # router to use, osrm, valhalla or ors
+    depends_on:
+      - osrm-backend
+  osrm-extract:
+    image: "ghcr.io/project-osrm/osrm-backend"
+    command: ["osrm-extract", "-p", "/opt/car.lua", "/data/beneventofinal.osm.pbf"]
+    volumes:
+      - ./gateway/data:/data
+  osrm-partition:
+    depends_on:
+      osrm-extract:
+        condition: service_completed_successfully
+    image: "ghcr.io/project-osrm/osrm-backend"
+    command: ["osrm-partition", "/data/beneventofinal.osrm"]
+    volumes:
+      - ./gateway/data:/data
+  osrm-customize:
+    depends_on:
+      osrm-partition:
+        condition: service_completed_successfully
+    image: "ghcr.io/project-osrm/osrm-backend"
+    command: ["osrm-customize", "/data/beneventofinal.osrm"]
+    volumes:
+      - ./gateway/data:/data
+  osrm-backend:
+    depends_on:
+      osrm-customize:
+        condition: service_completed_successfully
+    image: "ghcr.io/project-osrm/osrm-backend"
+    entrypoint:
+      - osrm-routed
+      - --max-matching-size
+      - "100000"
+      - --max-table-size
+      - "100000"
+      - --max-viaroute-size
+      - "100000"
+      - --algorithm
+      - mld
+      - /data/beneventofinal.osrm
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./gateway/data:/data
+
+volumes:
+  mongo-volume:
